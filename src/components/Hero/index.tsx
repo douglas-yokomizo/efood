@@ -1,14 +1,15 @@
-import logo from '../assets/images/logo.png'
-import { HeaderBg, Container, Title, Logo } from './styles'
-const Header = () => (
+import logo from '../../assets/images/logo.png'
+import { HeroBg, Container, Title, Logo } from './styles'
+
+const Hero = () => (
   <>
-    <HeaderBg>
+    <HeroBg>
       <Container className='container'>
         <Logo src={logo} alt="eFood Logo" />
         <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
       </Container>
-    </HeaderBg>
+    </HeroBg>
   </>
 )
 
-export { Header }
+export { Hero }

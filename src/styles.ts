@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-  vermelho: '#E66767',
-  bege: '#FFEBD9',
-  branco: '#FFFFFF',
+  red: '#E66767',
+  beige: '#FFEBD9',
+  white: '#FFFFFF',
   background: '#FFF8F2'
 }
 
@@ -19,7 +19,9 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto, sans-serif
+    font-family: Roboto, sans-serif;
+    list-style: none;
+    text-decoration: none
   }
 
   body {

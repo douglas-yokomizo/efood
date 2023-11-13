@@ -1,4 +1,6 @@
-import { Header } from "./Header"
+import { CardList } from "./components/CardList"
+import { Footer } from "./components/Footer"
+import { Hero } from "./components/Hero"
 import { GlobalStyles } from "./styles"
 
 function App() {
@@ -6,7 +8,11 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Header />
+      <Hero />
+      <div className="container">
+        <CardList />
+      </div>
+      <Footer />
     </>
   )
 }

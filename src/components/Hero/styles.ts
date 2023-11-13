@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import { colors, fonts } from '../styles'
-import headerBg from '../assets/images/headerBg.png'
+import { colors, fonts } from '../../styles'
+import heroBg from '../../assets/images/headerBg.png'
 
-export const HeaderBg = styled.header`
-  background-image: url(${headerBg});
+export const HeroBg = styled.div`
+  background-image: url(${heroBg});
   height: 384px;
+  margin-bottom: 80px;
   `
 
 export const Logo = styled.img`
@@ -21,7 +22,7 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h1`
-  color: ${colors.vermelho};
+  color: ${colors.red};
   font-weight: ${fonts.heading};
   margin-top: 138px;
   width: 540px;
