@@ -23,7 +23,7 @@ const CardList = ({ restaurants, products }: CardListProps) => {
     return (
       <ListContainer orientation="horizontal" className="container">
         {products?.map(product => (
-          <Card title={product.title} image={product.image} description={product.description} type="product" />
+          <Card title={product.title} image={product.image} description={product.description} type="product" key={product.id} />
         ))}
       </ListContainer>
     )
