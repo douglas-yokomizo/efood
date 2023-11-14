@@ -3,6 +3,7 @@ import { colors, fonts } from '../../styles'
 
 export const FooterBg = styled.div`
   background-color: ${colors.beige};
+  margin-top: 120px;
 
   p {
     width: 480px;
@@ -26,6 +27,16 @@ export const Socials = styled.ul`
   column-gap: 8px;
 
   li {
-    background-color: ${colors.red}
-  }
+    background-color: ${colors.red};
+    width:24px;
+    height: 24px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+      color: ${colors.beige};
+    }
+}
 `

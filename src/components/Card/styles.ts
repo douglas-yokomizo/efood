@@ -1,5 +1,6 @@
 import {styled} from 'styled-components'
 import { colors, fonts } from '../../styles'
+import { TagStyled } from '../Tag/styles'
 
 export const CardContainer = styled.div`
   max-width: 472px;
@@ -8,6 +9,13 @@ export const CardContainer = styled.div`
   background-color: ${colors.white};
   border: 1px solid ${colors.red};
   border-top: none;
+  position: relative;
+
+    ${TagStyled} {
+      position: absolute;
+      right: 16px;
+      top: 16px
+    }
 `
 
 export const CardInfo = styled.div`
