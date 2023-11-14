@@ -4,11 +4,15 @@ import { ButtonProps } from '.'
 
 export const ButtonStyled = styled.button<ButtonProps>`
   background-color: ${props => props.name === 'info' ? colors.red : colors.beige};
-  color: ${props => props.name === 'info' ? colors.beige : colors.red};
   cursor: pointer;
-  width: 82px;
+  width: ${props => props.name === 'info' ? '82px' : '304px'};
   height: 24px;
   border: none;
   font-weight: ${fonts.subHeading};
-  font-size: 14px
+  font-size: 14px;
+  color: ${props => props.name === 'info' ? colors.beige : colors.red};
+
+  a {
+    color: ${props => props.name === 'info' ? colors.beige : colors.red};
+  }
 `

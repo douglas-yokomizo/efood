@@ -1,4 +1,4 @@
-import { TagSpot, TagStyled } from "./styles"
+import { TagSpotlight, TagStyled } from "./styles"
 
 export type TagProps = {
   spotlight: string,
@@ -9,9 +9,9 @@ const Tag = ({ spotlight, category }: TagProps) => {
   return (
     <>
       <TagStyled>
-        <TagSpot spotlight={spotlight}>
+        <TagSpotlight spotlight={spotlight}>
           Destaque da semana
-        </TagSpot>
+        </TagSpotlight>
         <div>
           {category}
         </div>

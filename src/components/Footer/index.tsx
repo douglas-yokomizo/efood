@@ -1,8 +1,8 @@
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { ImInstagram } from "react-icons/im";
 
-import logo from '../../assets/images/logo.png'
-import { Logo } from '../Hero/styles'
+
+import { Logo } from '../Logo';
 import { FooterBg, FooterContainer, Socials } from './styles'
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
     <>
       <FooterBg>
         <FooterContainer className='container'>
-          <Logo src={logo} alt="efood logo" />
+          <Logo />
           <Socials>
             <li>
               <a href="/"><ImInstagram /></a>

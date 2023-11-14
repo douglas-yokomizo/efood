@@ -17,6 +17,6 @@ export const TagStyled = styled.div`
   }
 `
 
-export const TagSpot = styled.div<Omit<TagProps, 'category'>>`
+export const TagSpotlight = styled.div<Omit<TagProps, 'category'>>`
   display: ${props => props.spotlight === 'false' ? 'none' : 'block'};
   `

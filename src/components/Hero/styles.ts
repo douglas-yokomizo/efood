@@ -8,11 +8,6 @@ export const HeroBg = styled.div`
   margin-bottom: 80px;
   `
 
-export const Logo = styled.img`
-  width: 125px;
-  height:58px;
-`
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
