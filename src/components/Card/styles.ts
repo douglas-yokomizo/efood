@@ -31,6 +31,7 @@ export const CardInfo = styled.div<Omit<CardProps, 'title' | 'description' | 'sc
     h3 {
       font-size: ${props => props.type === 'restaurant' ? '18px' : '16px'};
       font-weight: ${props => props.type === 'restaurant' ? `${fonts.subHeading}` : `${fonts.heading}`};
+      margin-top: 4px;
     }
 `
 
@@ -39,6 +40,7 @@ export const Description = styled.p<Omit<CardProps, 'title' | 'description' | 's
   font-weight: ${fonts.text};
   font-size: 14px;
   height: 88px;
+  line-height: 22px;
 `
 
 export const CardHeader = styled.div`

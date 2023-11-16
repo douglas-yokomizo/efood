@@ -1,15 +1,15 @@
 import { Logo } from '../Logo'
-import { Cart, HeaderBg, HeaderContainer, Title } from './styles'
+import * as S from './styles'
 
 const Header = () => {
   return (
-    <HeaderBg>
-      <HeaderContainer className='container'>
-        <Title>Restaurantes</Title>
+    <S.HeaderBg>
+      <S.HeaderContainer className='container'>
+        <S.Title>Restaurantes</S.Title>
         <Logo />
-        <Cart>0 produtos(s) no carrinho</Cart>
-      </HeaderContainer>
-    </HeaderBg>
+        <S.Cart>0 produtos(s) no carrinho</S.Cart>
+      </S.HeaderContainer>
+    </S.HeaderBg>
   )
 }
 

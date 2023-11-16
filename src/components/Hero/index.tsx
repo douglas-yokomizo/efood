@@ -1,14 +1,14 @@
 import { Logo } from '../Logo'
-import { HeroBg, Container, Title } from './styles'
+import * as S from './styles'
 
 const Hero = () => (
   <>
-    <HeroBg>
-      <Container className='container'>
+    <S.HeroBg>
+      <S.Container className='container'>
         <Logo />
-        <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
-      </Container>
-    </HeroBg>
+        <S.Title>Viva experiências gastronômicas no conforto da sua casa</S.Title>
+      </S.Container>
+    </S.HeroBg>
   </>
 )
 

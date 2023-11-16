@@ -11,7 +11,7 @@ export const TagStyled = styled.div`
     color: ${colors.beige};
     font-weight: ${fonts.subHeading};
     padding: 6px 4px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     height: 26px;
   }

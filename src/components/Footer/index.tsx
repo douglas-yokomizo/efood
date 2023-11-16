@@ -1,17 +1,15 @@
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { ImInstagram } from "react-icons/im";
-
-
 import { Logo } from '../Logo';
-import { FooterBg, FooterContainer, Socials } from './styles'
+import * as S from './styles'
 
 const Footer = () => {
   return (
     <>
-      <FooterBg>
-        <FooterContainer className='container'>
+      <S.FooterBg>
+        <S.FooterContainer className='container'>
           <Logo />
-          <Socials>
+          <S.Socials>
             <li>
               <a href="/"><ImInstagram /></a>
             </li>
@@ -21,10 +19,10 @@ const Footer = () => {
             <li>
               <a href="/"><FaTwitter /></a>
             </li>
-          </Socials>
+          </S.Socials>
           <p>A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.</p>
-        </FooterContainer>
-      </FooterBg>
+        </S.FooterContainer>
+      </S.FooterBg>
     </>
   )
 }

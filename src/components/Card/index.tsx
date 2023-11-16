@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import star from '../../assets/images/star-icon.png'
 import { Tag } from '../Tag';
-import { CardContainer, CardHeader, CardInfo, Description, Score } from './styles'
 import { ButtonStyled } from '../Button/styles';
 import { Button } from '../Button';
+import * as S from './styles'
 
 export type CardProps = {
   image: string;
@@ -18,34 +18,34 @@ export type CardProps = {
 const Card = ({ title, description, score, image, spotlight, category, type }: CardProps) => {
   if (type === 'restaurant') {
     return (
-      <CardContainer type={type}>
+      <S.CardContainer type={type}>
         <img src={image} alt={title} />
         <Tag spotlight={spotlight as string} category={category as string} />
-        <CardInfo type={type}>
-          <CardHeader>
+        <S.CardInfo type={type}>
+          <S.CardHeader>
             <h3>{title}</h3>
-            <Score>
+            <S.Score>
               <span>{score}</span>
               <img src={star} alt={title} />
-            </Score>
-          </CardHeader>
-          <Description type={type}>{description}</Description>
+            </S.Score>
+          </S.CardHeader>
+          <S.Description type={type}>{description}</S.Description>
           <ButtonStyled name="info" >
             <Link to='/details'>Saiba Mais</Link>
           </ButtonStyled>
-        </CardInfo>
-      </CardContainer>
+        </S.CardInfo>
+      </S.CardContainer>
     )
   } else {
     return (
-      <CardContainer type={type}>
+      <S.CardContainer type={type}>
         <img src={image} alt={title} />
-        <CardInfo type={type}>
+        <S.CardInfo type={type}>
           <h3>{title}</h3>
-          <Description type={type}>{description}</Description>
+          <S.Description type={type}>{description}</S.Description>
           <Button name='add' >Adicionar ao carrinho</Button>
-        </CardInfo>
-      </CardContainer>
+        </S.CardInfo>
+      </S.CardContainer>
     )
 
   }

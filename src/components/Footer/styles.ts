@@ -11,6 +11,7 @@ export const FooterBg = styled.div`
     color:${colors.red};
     font-weight: ${fonts.text};
     font-size: 10px;
+    text-align: center;
   }
 `
 
@@ -34,9 +35,11 @@ export const Socials = styled.ul`
     display:flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     a{
       color: ${colors.beige};
+      font-size:12px;
     }
 }
 `
