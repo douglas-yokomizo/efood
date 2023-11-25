@@ -1,60 +1,38 @@
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+
+import { Restaurant } from "../../types/api"
 import { Header } from "../../components/Header"
-import { Product } from "../../models/Product"
-import pizza from '../../assets/images/pizza.png'
 import { CardList } from "../../components/CardList"
 import * as S from './styles'
 
-const products: Product[] = [
-  {
-    id: 1,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 2,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 3,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 4,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 5,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 6,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-]
 
 const Details = () => {
+  const { id } = useParams();
+
+  const [restaurant, setRestaurant] = useState<Restaurant>()
+
+  useEffect(() => {
+    const getData = async () => {
+      const restaurantData = await fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
+        .then(res => res.json());
+      setRestaurant(restaurantData);
+    };
+    getData()
+  }, [id])
+
+
   return (
     <>
       <Header />
       <S.Banner>
         <S.BannerImage />
         <S.Container className="container">
-          <S.Category>Italiana</S.Category>
-          <S.RestaurantName>La Dolce Vita Trattoria</S.RestaurantName>
+          <S.Category>{restaurant?.tipo}</S.Category>
+          <S.RestaurantName>{restaurant?.titulo}</S.RestaurantName>
         </S.Container>
       </S.Banner>
-      <CardList orientation="horizontal" products={products} />
+      <CardList orientation="horizontal" />
     </>
   )
 }

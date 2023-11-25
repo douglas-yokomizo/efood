@@ -3,40 +3,46 @@ import { colors, fonts } from '../../styles'
 import { TagStyled } from '../Tag/styles'
 import { CardProps } from '.'
 
-export const CardContainer = styled.div<Omit<CardProps, 'title' | 'description' | 'score' | 'image' | 'spotlight' | 'category'>>`
-  max-width: ${props => props.type === 'restaurant' ? '472px' : '320px'};
+export const CardContainer = styled.div<Omit<CardProps, 'titulo' | 'descricao' | 'avaliacao' | 'capa' | 'destacado' | 'tipo' | 'id'>>`
+  max-width: ${props => props.isrestaurant ? '472px' : '320px'};
   width: 100%;
-  color:${props => props.type === 'restaurant' ? colors.red : colors.beige};
-  background-color: ${props => props.type === 'restaurant' ? colors.white: colors.red};
-  border: ${props => props.type === 'restaurant' && `1px solid ${colors.red}`};
+  color:${props => props.isrestaurant ? colors.red : colors.beige};
+  background-color: ${props => props.isrestaurant ? colors.white: colors.red};
+  border: ${props => props.isrestaurant && `1px solid ${colors.red}`};
   border-top: none;
   position: relative;
-  padding: ${props => props.type !== 'restaurant' && '8px'};
-  width: ${props => props.type !== 'restaurant' && '320px'};
-  height: ${props => props.type !== 'restaurant' && '338px'};
+  padding: ${props => !props.isrestaurant && '8px'};
+  width: ${props => !props.isrestaurant && '320px'};
+  height: ${props => !props.isrestaurant && '338px'};
 
     ${TagStyled} {
       position: absolute;
       right: 16px;
       top: 16px
     }
+
+    > img {
+      width: ${props => props.isrestaurant ? '470px' : '304px'};
+      height: ${props => props.isrestaurant ? '217px' : '168px'};
+      object-fit: cover;
+    }
 `
 
-export const CardInfo = styled.div<Omit<CardProps, 'title' | 'description' | 'score' | 'image' | 'spotlight' | 'category'>>`
-  padding: ${props => props.type === 'restaurant' && '8px'};
-  display: ${props => props.type === 'product' && 'flex'};
-  flex-direction: ${props => props.type === 'product' && 'column'};
-  gap: ${props => props.type === 'product' && '8px 0'};
+export const CardInfo = styled.div<Omit<CardProps, 'titulo' | 'descricao' | 'avaliacao' | 'capa' | 'destacado' | 'tipo'>>`
+  padding: ${props => props.isrestaurant && '8px'};
+  display: ${props => !props.isrestaurant && 'flex'};
+  flex-direction: ${props => !props.isrestaurant && 'column'};
+  gap: ${props => !props.isrestaurant && '8px 0'};
 
     h3 {
-      font-size: ${props => props.type === 'restaurant' ? '18px' : '16px'};
-      font-weight: ${props => props.type === 'restaurant' ? `${fonts.subHeading}` : `${fonts.heading}`};
+      font-size: ${props => props.isrestaurant ? '18px' : '16px'};
+      font-weight: ${props => props.isrestaurant ? `${fonts.subHeading}` : `${fonts.heading}`};
       margin-top: 4px;
     }
 `
 
-export const Description = styled.p<Omit<CardProps, 'title' | 'description' | 'score' | 'image' | 'spotlight' | 'category'>>`
-  margin-bottom: ${props => props.type === 'restaurant' && '16px'};
+export const Description = styled.p<Omit<CardProps, 'titulo' | 'descricao' | 'avaliacao' | 'capa' | 'destacado' | 'tipo'>>`
+  margin-bottom: ${props => props.isrestaurant && '16px'};
   font-weight: ${fonts.text};
   font-size: 14px;
   height: 88px;
@@ -57,4 +63,5 @@ export const Score = styled.div`
   font-size: 18px;
   font-weight: ${fonts.subHeading};
   gap: 8px;
+
 `

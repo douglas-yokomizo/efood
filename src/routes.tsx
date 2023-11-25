@@ -6,7 +6,7 @@ const Rotas = () => {
   return (
     <Routes>
       <Route path="/" Component={Home} />
-      <Route path="/details" Component={Details} />
+      <Route path="/details/:id" Component={Details} />
     </Routes>
   )
 }

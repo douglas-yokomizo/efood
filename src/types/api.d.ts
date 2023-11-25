@@ -1,20 +1,20 @@
 export interface Restaurant
   {
-    id: number,
-    title: string,
-    spotlight: string,
-    category?: string,
-    score?: number,
-    description: string,
-    cover: string,
-    menu?: [
+    id?: number,
+    titulo: string,
+    destacado?: boolean,
+    tipo?: string,
+    avaliacao?: number,
+    descricao: string,
+    capa: string,
+    cardapio?: [
       {
-        photo: string,
-        price: number,
+        foto: string,
+        preco: number,
         id: number,
-        name: string,
-        description: string,
-        size: string,
+        nome: string,
+        descricao: string,
+        porcao: string
       }
     ]
   }
