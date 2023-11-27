@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bannerImg from '../../assets/images/banner.png'
 import { colors, fonts } from "../../styles";
 
 export const Banner = styled.div`
@@ -15,7 +14,6 @@ top: 0;
 right: 0;
 bottom: 0;
 left: 0;
-background-image: url(${bannerImg});
 background-size: cover;
 filter: brightness(.5);
 `

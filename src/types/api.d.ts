@@ -7,15 +7,16 @@ export interface Restaurant
     avaliacao?: number,
     descricao: string,
     capa: string,
-    cardapio?: [
-      {
-        foto: string,
-        preco: number,
-        id: number,
-        nome: string,
-        descricao: string,
-        porcao: string
-      }
-    ]
   }
+
+  export interface MenuItem
+    {
+      foto: string,
+      preco: number,
+      id: number,
+      nome: string,
+      descricao: string,
+      porcao: string
+    }
+
 

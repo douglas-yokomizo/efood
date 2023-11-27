@@ -3,7 +3,7 @@ import { colors, fonts } from '../../styles'
 import { TagStyled } from '../Tag/styles'
 import { CardProps } from '.'
 
-export const CardContainer = styled.div<Omit<CardProps, 'titulo' | 'descricao' | 'avaliacao' | 'capa' | 'destacado' | 'tipo' | 'id'>>`
+export const CardContainer = styled.div<CardProps>`
   max-width: ${props => props.isrestaurant ? '472px' : '320px'};
   width: 100%;
   color:${props => props.isrestaurant ? colors.red : colors.beige};
@@ -28,11 +28,11 @@ export const CardContainer = styled.div<Omit<CardProps, 'titulo' | 'descricao' |
     }
 `
 
-export const CardInfo = styled.div<Omit<CardProps, 'titulo' | 'descricao' | 'avaliacao' | 'capa' | 'destacado' | 'tipo'>>`
+export const CardInfo = styled.div<CardProps>`
   padding: ${props => props.isrestaurant && '8px'};
   display: ${props => !props.isrestaurant && 'flex'};
   flex-direction: ${props => !props.isrestaurant && 'column'};
-  gap: ${props => !props.isrestaurant && '8px 0'};
+  gap: ${props => !props.isrestaurant && '8px'};
 
     h3 {
       font-size: ${props => props.isrestaurant ? '18px' : '16px'};
@@ -41,20 +41,21 @@ export const CardInfo = styled.div<Omit<CardProps, 'titulo' | 'descricao' | 'ava
     }
 `
 
-export const Description = styled.p<Omit<CardProps, 'titulo' | 'descricao' | 'avaliacao' | 'capa' | 'destacado' | 'tipo'>>`
+export const Description = styled.p<CardProps>`
   margin-bottom: ${props => props.isrestaurant && '16px'};
   font-weight: ${fonts.text};
   font-size: 14px;
+  width: ${props => props.isrestaurant ? '456px' : '304px'};
   height: 88px;
   line-height: 22px;
 `
 
-export const CardHeader = styled.div`
+export const CardHeader = styled.div<CardProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: ${props => props.isrestaurant ? '16px' : '0px'};
   `
 
 export const Score = styled.div`

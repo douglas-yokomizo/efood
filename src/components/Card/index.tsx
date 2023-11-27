@@ -4,57 +4,63 @@ import { Tag } from '../Tag';
 import { ButtonStyled } from '../Button/styles';
 import { Button } from '../Button';
 import * as S from './styles'
-import { Restaurant } from '../../types/api';
+import { Restaurant, MenuItem } from '../../types/api';
 
-export interface CardProps extends Restaurant {
+export interface CardProps {
   isrestaurant: boolean
 }
 
-const Card = ({ titulo, descricao, avaliacao, capa, destacado, tipo, isrestaurant, id }: CardProps) => {
-
+const RestaurantCard = ({ restaurant }: { restaurant: Restaurant }) => {
   const getDescricao = (descricao: string) => {
-    if (descricao.length > 248 && isrestaurant) {
-      return descricao.slice(0, 245) + '...'
-    } else if (!isrestaurant) {
-      return descricao.slice(0, 132) + '...'
+    if (descricao.length > 248) {
+      return descricao.slice(0, 245) + "...";
     } else {
-      return descricao
+      return descricao;
     }
-  }
+  };
 
-  if (isrestaurant) {
-    return (
-      <S.CardContainer isrestaurant={isrestaurant}>
-        <img src={capa} alt={titulo} />
-        <Tag destacado={destacado as boolean} tipo={tipo as string} />
-        <S.CardInfo isrestaurant={isrestaurant}>
-          <S.CardHeader>
-            <h3>{titulo}</h3>
-            <S.Score>
-              <span>{avaliacao}</span>
-              <img src={star} alt={titulo} />
-            </S.Score>
-          </S.CardHeader>
-          <S.Description isrestaurant={isrestaurant}>{getDescricao(descricao)}</S.Description>
-          <ButtonStyled name="info" >
-            <Link to={`/details/${id}`}>Saiba Mais</Link>
-          </ButtonStyled>
-        </S.CardInfo>
-      </S.CardContainer>
-    )
-  } else {
-    return (
-      <S.CardContainer isrestaurant={isrestaurant}>
-        <img src={capa} alt={titulo} />
-        <S.CardInfo isrestaurant={isrestaurant}>
-          <h3>{titulo}</h3>
-          <S.Description isrestaurant={isrestaurant}>{getDescricao(descricao)}</S.Description>
-          <Button name='add' >Adicionar ao carrinho</Button>
-        </S.CardInfo>
-      </S.CardContainer>
-    )
+  return (
+    <S.CardContainer isrestaurant={true}>
+      <img src={restaurant.capa} alt={restaurant.titulo} />
+      <Tag destacado={restaurant.destacado as boolean} tipo={restaurant.tipo as string} />
+      <S.CardInfo isrestaurant={true}>
+        <S.CardHeader isrestaurant={true}>
+          <h3>{restaurant.titulo}</h3>
+          <S.Score>
+            <span>{restaurant.avaliacao}</span>
+            <img src={star} alt={restaurant.titulo} />
+          </S.Score>
+        </S.CardHeader>
+        <S.Description isrestaurant={true}>{getDescricao(restaurant.descricao)}</S.Description>
+        <ButtonStyled name="info">
+          <Link to={`/details/${restaurant.id}`}>Saiba Mais</Link>
+        </ButtonStyled>
+      </S.CardInfo>
+    </S.CardContainer>
+  );
+};
 
-  }
-}
+const MenuItemCard = ({ item }: { item: MenuItem }) => {
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 132) {
+      return descricao.slice(0, 129) + "...";
+    } else {
+      return descricao;
+    }
+  };
 
-export { Card }
+  return (
+    <S.CardContainer isrestaurant={false}>
+      <img src={item.foto} alt={item.nome} />
+      <S.CardInfo isrestaurant={false}>
+        <S.CardHeader isrestaurant={false}>
+          <h3>{item.nome}</h3>
+        </S.CardHeader>
+        <S.Description isrestaurant={false}>{getDescricao(item.descricao)}</S.Description>
+        <Button name="add">Adicionar ao carrinho</Button>
+      </S.CardInfo>
+    </S.CardContainer>
+  );
+};
+
+export { RestaurantCard, MenuItemCard };
