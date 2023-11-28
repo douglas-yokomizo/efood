@@ -54,13 +54,6 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
     }
   };
 
-  const formataPreco = (preco: number) => {
-    new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
-
   return (
     <>
       <S.CardContainer isrestaurant={false}>
