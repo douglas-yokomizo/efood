@@ -39,7 +39,7 @@ export const CardInfo = styled.div<CardProps>`
     h3 {
       font-size: ${props => props.isrestaurant ? '18px' : '16px'};
       font-weight: ${props => props.isrestaurant ? `${fonts.subHeading}` : `${fonts.heading}`};
-      margin-top: 4px;
+      margin-top: ${props => props.isrestaurant ? '-4px' : '4px'};
     }
 `
 
@@ -66,6 +66,7 @@ export const Score = styled.div`
   font-size: 18px;
   font-weight: ${fonts.subHeading};
   gap: 8px;
+  margin-top: -4px;
 
   span {
     width: 26px;
