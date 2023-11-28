@@ -34,7 +34,7 @@ const Details = () => {
     return (
       <>
         <Header />
-        <h3 style={{ display: 'grid', placeItems: 'center', height: '400px' }}>Carregando...</h3>
+        <h2 style={{ display: 'grid', placeItems: 'center', height: '400px' }}>Carregando...</h2>
       </>
     )
   }

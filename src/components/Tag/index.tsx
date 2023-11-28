@@ -6,6 +6,11 @@ export type TagProps = {
 }
 
 const Tag = ({ destacado, tipo }: TagProps) => {
+
+  const getTipo = (tipo: string) => {
+    return tipo.charAt(0).toUpperCase() + tipo.slice(1)
+  }
+
   return (
     <>
       <S.TagStyled>
@@ -13,7 +18,7 @@ const Tag = ({ destacado, tipo }: TagProps) => {
           Destaque da semana
         </S.TagSpotlight>
         <div>
-          {tipo}
+          {getTipo(tipo)}
         </div>
       </S.TagStyled>
     </>
