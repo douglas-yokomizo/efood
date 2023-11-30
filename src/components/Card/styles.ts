@@ -77,8 +77,6 @@ export const Score = styled.div`
 export const ModalContainer = styled.div`
   width: 1024px;
   height: 344px;
-  background-color: ${colors.red};
-  padding: 32px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -99,19 +97,21 @@ export const ModalContainer = styled.div`
   }
 
   .overlay {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
+    z-index: -1;
     background-color: rgba(0,0,0, .8);
   }
-`
+  `
 
 export const ModalContent = styled.div`
   display: flex;
   color: ${colors.white};
   gap: 24px;
   font-weight: ${fonts.text};
+  background-color: ${colors.red};
+  padding: 32px;
 
   div {
     width: 656px;
@@ -141,5 +141,6 @@ export const ModalContent = styled.div`
 export const ModalImage = styled.img`
   width: 280px;
   height: 280px;
+  object-fit:cover;
 `
 

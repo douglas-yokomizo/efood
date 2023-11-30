@@ -70,6 +70,7 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
       {modalIsOpen && (
         <>
           <S.ModalContainer className='container'>
+            <div className="overlay" onClick={() => setModalIsOpen(false)}></div>
             <img src={close} alt="Ícone de fechar" onClick={() => setModalIsOpen(false)} />
             <S.ModalContent>
               <S.ModalImage src={item.foto} alt={item.nome} />
@@ -80,7 +81,6 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
                 <ButtonStyled name='add'>{`Adicionar ao carrinho - R$ ${item.preco}`}</ButtonStyled>
               </div>
             </S.ModalContent>
-            <div className="overlay"></div>
           </S.ModalContainer>
         </>
       )}
