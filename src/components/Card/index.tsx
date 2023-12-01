@@ -54,6 +54,13 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
     }
   };
 
+  const formataPreco = (preco = 0) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(preco)
+  }
+
   return (
     <>
       <S.CardContainer isrestaurant={false}>
@@ -78,7 +85,7 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
                 <h3>{item.nome}</h3>
                 <p>{item.descricao}</p>
                 <p>{item.porcao !== '1 pessoa' ? `Serve: de ${item.porcao}` : `Serve: ${item.porcao}`}</p>
-                <ButtonStyled name='add'>{`Adicionar ao carrinho - R$ ${item.preco}`}</ButtonStyled>
+                <ButtonStyled name='add'>{`Adicionar ao carrinho - ${formataPreco(item.preco)}`}</ButtonStyled>
               </div>
             </S.ModalContent>
           </S.ModalContainer>

@@ -26,7 +26,7 @@ export const CardContainer = styled.div<CardProps>`
       width: ${props => props.isrestaurant ? '470px' : '304px'};
       height: ${props => props.isrestaurant ? '217px' : '168px'};
       object-fit: cover;
-      cursor:pointer;
+      cursor:${props => !props.isrestaurant && 'pointer'};
     }
 `
 
@@ -72,6 +72,7 @@ export const Score = styled.div`
     width: 26px;
     height: 21px;
   }
+
 `
 
 export const ModalContainer = styled.div`
@@ -131,7 +132,7 @@ export const ModalContent = styled.div`
     }
 
     ${ButtonStyled} {
-      width: 218px;
+      width: 224px;
       height: 24px;
       padding: 4px 8px;
     }
