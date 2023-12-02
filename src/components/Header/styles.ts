@@ -16,7 +16,7 @@ export const Title = styled.h2`
   width: 108px;
   text-align: center;
   font-size: 18px;
-  `
+    `
 
 export const CartButton = styled.h3`
   margin-left: 193px;

@@ -16,17 +16,18 @@ export const CardContainer = styled.div<CardProps>`
   width: ${props => !props.isrestaurant && '320px'};
   height: ${props => !props.isrestaurant && '338px'};
 
-    ${TagStyled} {
-      position: absolute;
-      right: 16px;
-      top: 16px
-    }
+  ${TagStyled} {
+    position: absolute;
+    right: 16px;
+    top: 16px
+  }
 
-    > img {
-      width: ${props => props.isrestaurant ? '470px' : '304px'};
-      height: ${props => props.isrestaurant ? '217px' : '168px'};
-      object-fit: cover;
-      cursor:${props => !props.isrestaurant && 'pointer'};
+  > img {
+    width: ${props => props.isrestaurant ? '470px' : '304px'};
+    height: ${props => props.isrestaurant ? '217px' : '168px'};
+    object-fit: cover;
+    cursor:${props => !props.isrestaurant && 'pointer'};
+
     }
 `
 
