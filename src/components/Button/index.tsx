@@ -2,13 +2,14 @@ import { ButtonStyled } from "./styles";
 
 export type ButtonProps = {
   name: 'info' | 'add';
-  children: string | JSX.Element | number
+  children: string | JSX.Element | number;
+  onClick?: () => void;
 }
 
-const Button = ({ name, children }: ButtonProps) => {
+const Button = ({ name, children, onClick }: ButtonProps) => {
   return (
     <>
-      <ButtonStyled name={name}>
+      <ButtonStyled name={name} onClick={onClick}>
         {children}
       </ButtonStyled>
     </>

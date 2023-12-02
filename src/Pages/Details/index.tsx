@@ -4,6 +4,7 @@ import { Header } from "../../components/Header"
 import * as S from './styles'
 import { MenuList } from "../../components/MenuList"
 import { useGetRestaurantMenuQuery, useGetRestaurantDataQuery } from "../../services/api"
+import { AsideBar } from "../../components/AsideBar"
 
 
 const Details = () => {
@@ -35,6 +36,7 @@ const Details = () => {
           <S.RestaurantName>{restaurant.titulo}</S.RestaurantName>
         </S.Container>
       </S.Banner>
+      <AsideBar />
       <MenuList items={menu} />
     </>
   )

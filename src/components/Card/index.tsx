@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import close from '../../assets/images/close 1.png'
 import star from '../../assets/images/star-icon.png'
@@ -8,6 +9,7 @@ import { ButtonStyled } from '../Button/styles';
 import { Button } from '../Button';
 import * as S from './styles'
 import { Restaurant, MenuItem } from '../../types/api';
+import { add, open } from '../../store/reducers/cart';
 
 export interface CardProps {
   isrestaurant: boolean
@@ -61,6 +63,13 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
     }).format(preco)
   }
 
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(item))
+    dispatch(open())
+  }
+
   return (
     <>
       <S.CardContainer isrestaurant={false}>
@@ -70,7 +79,7 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
             <h3>{item.nome}</h3>
           </S.CardHeader>
           <S.Description isrestaurant={false}>{getDescricao(item.descricao)}</S.Description>
-          <Button name="add">Adicionar ao carrinho</Button>
+          <Button name="add" onClick={addToCart}>Adicionar ao carrinho</Button>
         </S.CardInfo>
       </S.CardContainer>
 
@@ -85,7 +94,9 @@ const MenuItemCard = ({ item }: { item: MenuItem }) => {
                 <h3>{item.nome}</h3>
                 <p>{item.descricao}</p>
                 <p>{item.porcao !== '1 pessoa' ? `Serve: de ${item.porcao}` : `Serve: ${item.porcao}`}</p>
-                <ButtonStyled name='add'>{`Adicionar ao carrinho - ${formataPreco(item.preco)}`}</ButtonStyled>
+                <ButtonStyled name='add' onClick={() => { addToCart(); setModalIsOpen(false) }}>
+                  {`Adicionar ao carrinho - ${formataPreco(item.preco)}`}
+                </ButtonStyled>
               </div>
             </S.ModalContent>
           </S.ModalContainer>

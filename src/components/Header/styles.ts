@@ -18,11 +18,12 @@ export const Title = styled.h2`
   font-size: 18px;
   `
 
-export const Cart = styled.h3`
+export const CartButton = styled.h3`
   margin-left: 193px;
   width: 256px;
   text-align: right;
   font-size: 18px;
+  cursor: pointer;
   `
 
 export const HeaderBg = styled.div`

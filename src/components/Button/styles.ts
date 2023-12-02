@@ -2,7 +2,7 @@ import {styled} from 'styled-components'
 import { colors, fonts } from '../../styles'
 import { ButtonProps } from '.'
 
-export const ButtonStyled = styled.button<ButtonProps>`
+export const ButtonStyled = styled.button<Omit<ButtonProps, 'onClick'>>`
   background-color: ${props => props.name === 'info' ? colors.red : colors.beige};
   cursor: pointer;
   width: ${props => props.name === 'info' ? '82px' : '304px'};
