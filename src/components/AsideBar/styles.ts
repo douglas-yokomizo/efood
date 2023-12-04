@@ -44,6 +44,8 @@ export const SideBar = styled.aside`
     color: ${colors.beige};
     font-weight: ${fonts.subHeading};
     margin-bottom: 16px;
+    font-size: 14px;
+
   }
 
   ${ButtonStyled} {
@@ -77,11 +79,16 @@ export const CartItem = styled.div`
 
   h3 {
     margin-bottom: 16px;
+    font-size: 18px
   }
 
   img {
     width: 80px;
     height: 80px;
     object-fit: cover;
+  }
+
+  span {
+    font-size: 14px;
   }
 `
