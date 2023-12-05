@@ -11,7 +11,7 @@ export const ButtonStyled = styled.button<Omit<ButtonProps, 'onClick'>>`
   font-weight: ${fonts.subHeading};
   font-size: 14px;
   color: ${props => props.name === 'info' ? colors.beige : colors.red};
-
+  margin-top: ${props => props.first === 'first' ? '24px' : ''};
   a {
     color: ${props => props.name === 'info' ? colors.beige : colors.red};
   }

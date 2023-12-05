@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors, fonts } from "../../styles";
 import { ButtonStyled } from "../Button/styles";
+import { Form } from "formik";
 
 export const Overlay = styled.div`
   position: absolute;
@@ -45,15 +46,15 @@ export const SideBar = styled.aside`
     font-weight: ${fonts.subHeading};
     margin-bottom: 16px;
     font-size: 14px;
-
   }
+
 
   ${ButtonStyled} {
     width: 100%;
     height: 24px;
     font-size: 14px;
   }
-`
+  `
 
 export const CartItemContainer = styled.li`
   background-color: ${colors.beige};
@@ -70,7 +71,7 @@ export const CartItemContainer = styled.li`
     object-fit: cover;
     cursor: pointer;
   }
-`
+  `
 
 export const CartItem = styled.div`
   display:flex;
@@ -91,4 +92,61 @@ export const CartItem = styled.div`
   span {
     font-size: 14px;
   }
-`
+  `
+
+export const FormsTitles = styled.h3`
+  font-size: 16px;
+  color: ${colors.beige};
+  font-weight: ${fonts.subHeading};
+  margin-bottom: 16px;
+  `
+
+export const StyledForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  div {
+    display: flex;
+    gap: 34px;
+
+    input {
+      width: 50%;
+    }
+  }
+
+  label {
+
+    p {
+      color: ${colors.beige};
+      font-size: 14px;
+      font-weight: ${fonts.subHeading};
+      margin-bottom: 8px;
+    }
+
+    input {
+      background-color: ${colors.beige};
+      border: none;
+      width: 100%;
+      height: 32px;
+      padding: 8px;
+
+      &:focus {
+        outline: none
+      }
+    }
+
+    div {
+      font-size: 14px;
+      margin: 4px 0;
+    }
+  }
+  `
+
+  export const CardNumber = styled.div`
+    gap: 30px;
+
+    :first-child:label {
+      width: 95%;
+    }
+  `
