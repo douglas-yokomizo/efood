@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# efood
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto
 
-Currently, two official plugins are available:
+O efood é uma plataforma para divulgação de estabelecimentos gastronômicos, que permite aos usuários viver experiências culinárias no conforto da sua casa1. O projeto foi desenvolvido usando as seguintes tecnologias:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React: uma biblioteca JavaScript para criar interfaces de usuário
+- TypeScript: uma linguagem que adiciona tipagem estática ao JavaScript
+- Vite: uma ferramenta de construção que oferece um rápido desenvolvimento e otimização de aplicações web
+- Redux Toolkit: uma biblioteca que simplifica o gerenciamento de estado com Redux
+- Styled-components: uma biblioteca que permite escrever CSS dentro de componentes React
+- Formik: uma biblioteca que facilita a criação de formulários em React
+- Yup: uma biblioteca que permite validar os dados dos formulários
 
-## Expanding the ESLint configuration
+## Como executar o projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para executar o projeto localmente, você precisa ter o Node.js e o npm instalados na sua máquina. Em seguida, siga os passos abaixo:
 
-- Configure the top-level `parserOptions` property like this:
+- Clone o repositório do GitHub: git clone https://github.com/seu-usuario/efood.git
+- Entre na pasta do projeto: cd efood
+- Instale as dependências: npm install
+- Inicie o servidor de desenvolvimento: npm run dev
+- Abra o navegador e acesse: http://localhost:3000
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Como usar o projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+O projeto consiste em uma página que mostra os destaques da semana e as categorias de estabelecimentos disponíveis na plataforma. Você pode clicar em cada estabelecimento para ver mais detalhes, como o nome, a avaliação, a descrição e o menu. Você também pode fazer um pedido online, preenchendo um formulário com seus dados e escolhendo os itens que deseja. Após confirmar o pedido, você receberá uma confirmação por e-mail.
+
+## Licença
+
+O projeto está sob a licença MIT.
+
+## Contato
+
+Se você tiver alguma dúvida, sugestão ou feedback sobre o projeto, entre em contato comigo pelo e-mail: [yogi.yokomizo@gmail.com]
+
+## Veja funcionando:
+
+[efood-zeta-seven.vercel.com]
