@@ -5,6 +5,7 @@ import * as S from './styles'
 import { MenuList } from "../../components/MenuList"
 import { useGetRestaurantMenuQuery, useGetRestaurantDataQuery } from "../../services/api"
 import { AsideBar } from "../../components/AsideBar"
+import Loader from "../../components/Loader"
 
 
 const Details = () => {
@@ -21,7 +22,7 @@ const Details = () => {
     return (
       <>
         <Header />
-        <h2 style={{ display: 'grid', placeItems: 'center', height: '400px' }}>Carregando...</h2>
+        <Loader />
       </>
     )
   }

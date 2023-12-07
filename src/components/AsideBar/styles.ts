@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { colors, fonts } from "../../styles";
 import { ButtonStyled } from "../Button/styles";
-import { Form } from "formik";
 
 export const Overlay = styled.div`
   position: absolute;
@@ -101,52 +100,60 @@ export const FormsTitles = styled.h3`
   margin-bottom: 16px;
   `
 
-export const StyledForm = styled(Form)`
+export const ConfirmationMessage = styled.p`
+  font-size: 14px;
+  color: ${colors.beige};
+  font-weight: ${fonts.text}
+`
+
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 8px;
 
-  div {
+  .cep-number {
     display: flex;
     gap: 34px;
-
-    input {
-      width: 50%;
-    }
   }
 
-  label {
+  .card-code {
+    display: flex;
+    gap: 30px;
 
-    p {
-      color: ${colors.beige};
-      font-size: 14px;
-      font-weight: ${fonts.subHeading};
-      margin-bottom: 8px;
-    }
-
-    input {
-      background-color: ${colors.beige};
-      border: none;
+    :first-child {
       width: 100%;
-      height: 32px;
-      padding: 8px;
-
-      &:focus {
-        outline: none
-      }
-    }
-
-    div {
-      font-size: 14px;
-      margin: 4px 0;
     }
   }
   `
 
-  export const CardNumber = styled.div`
-    gap: 30px;
+  export const InputGroup = styled.div`
+  margin-top: 8px;
 
-    :first-child:label {
-      width: 95%;
+  div.error-message {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  label {
+    color: ${colors.beige};
+    font-size: 14px;
+    font-weight: ${fonts.subHeading};
+  }
+
+  input {
+    background-color: ${colors.beige};
+    border: none;
+    width: 100%;
+    height: 32px;
+    padding: 8px;
+    margin-top: 8px;
+
+    &.error{
+      border: 2px solid black;
     }
+
+    &:focus {
+      outline: none
+    }
+
+  }
   `
