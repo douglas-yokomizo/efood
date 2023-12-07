@@ -32,8 +32,7 @@ O projeto está sob a licença MIT.
 
 ## Contato
 
-Se você tiver alguma dúvida, sugestão ou feedback sobre o projeto, entre em contato comigo pelo e-mail: [yogi.yokomizo@gmail.com]
+Se você tiver alguma dúvida, sugestão ou feedback sobre o projeto, entre em contato comigo pelo e-mail: yogi.yokomizo@gmail.com
 
-## Veja funcionando:
+## [Veja funcionando](efood-zeta-seven.vercel.com)
 
-[efood-zeta-seven.vercel.com]
